@@ -8,6 +8,7 @@ const mongoose = require("mongoose");
 const cookieSession = require("cookie-session");
 const cors = require("cors");
 const passport = require("passport");
+const fileUpload = require('express-fileupload')
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
@@ -58,9 +59,9 @@ mongoose
             })
         );
 
-        app.get("/", authCheck, (req, res) => {
-            res.status(200)
-        })
+        // app.get("/", authCheck, (req, res) => {
+        //     res.status(200)
+        // })
 
         app.use('/', indexRouter);
         app.use('/users', usersRouter);
