@@ -59,9 +59,9 @@ mongoose
             })
         );
 
-        // app.get("/", authCheck, (req, res) => {
-        //     res.status(200)
-        // })
+        app.get("/", authCheck, (req, res) => {
+            res.status(200)
+        })
 
         app.use('/', indexRouter);
         app.use('/users', usersRouter);
