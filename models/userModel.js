@@ -6,23 +6,13 @@ const schema = mongoose.Schema({
         familyName: String,
         givenName: String
     },
+    adminId: Number,
+    status: String,
     gender: String,
     username: String,
     password: String,
-    cover: String,
-    hatProfileCover: String,
     vkontakteId: String,
     registrationDate: String,
-    usersAuthors: [
-        {
-            usersId: mongoose.Schema.Types.ObjectID
-        }
-    ],
-    usersCards: [
-        {
-            cardId: mongoose.Schema.Types.ObjectID
-        }
-    ],
 }, {collection: 'Users'})
 
 schema.statics.findOneOrCreate = function findOneOrCreate(profile) {
