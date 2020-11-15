@@ -20,12 +20,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f3b008f8-69e9-439d-9d59-aa190e504e41" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/models/hw.model.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/hw.service.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/hw.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/hw.model.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/userModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/userModel.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/files.service.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/users.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/hw.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/hw.service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/userService.js" beforeDir="false" afterPath="$PROJECT_DIR$/services/userService.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +53,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="dart.analysis.tool.window.visible" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../PK_Project_backend" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -72,8 +74,17 @@
       <workItem from="1605080703078" duration="1076000" />
       <workItem from="1605172619363" duration="8234000" />
       <workItem from="1605183864692" duration="7250000" />
-      <workItem from="1605314924396" duration="19141000" />
+      <workItem from="1605314924396" duration="21945000" />
+      <workItem from="1605404293044" duration="11787000" />
     </task>
+    <task id="LOCAL-00001" summary="Add hwModel;methods: createHw,hwSendToModerate,hwSetComplete,getAllHwTheme; adminId and status fro userModel.">
+      <created>1605339674299</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1605339674299</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -93,6 +104,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Add hwModel;methods: createHw,hwSendToModerate,hwSetComplete,getAllHwTheme; adminId and status fro userModel." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add hwModel;methods: createHw,hwSendToModerate,hwSetComplete,getAllHwTheme; adminId and status fro userModel." />
   </component>
   <component name="WindowStateProjectService">
     <state x="725" y="341" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1605192180759">
@@ -103,6 +116,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="740" y="294" key="FileChooserDialogImpl/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1605315867974" />
+    <state x="552" y="259" key="Vcs.Push.Dialog.v2" timestamp="1605339676547">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="552" y="259" key="Vcs.Push.Dialog.v2/0.0.1920.1080/1920.0.1920.1080@0.0.1920.1080" timestamp="1605339676547" />
     <state x="208" y="143" width="1657" height="717" key="dock-window-1" timestamp="1605323266285">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>

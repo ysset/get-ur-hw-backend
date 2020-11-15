@@ -3,6 +3,7 @@ const app = express.Router();
 
 const multer = require("multer")
 const FilesService = require('../services/hw.service')
+const UserService = require('../services/userService')
 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
@@ -19,6 +20,7 @@ const upload = multer({
 })
 
 const filesService = new FilesService()
+const userService = new UserService()
 
 /* GET home page. */
 app.post('/upload', upload.single('hw', 'theme', 'user'), async (req, res, next) => {
@@ -45,14 +47,14 @@ app.post('/upload', upload.single('hw', 'theme', 'user'), async (req, res, next)
     })
 });
 
-app.post('/newHw:AdminId', async (req, res) => {
-    console.log(req.body)
+app.post('/newHw:AdminId', upload.single('lesson'), async (req, res) => {
+    console.log(req.body.lesson)
     await filesService.createHw(req.body, req.params.adminId)
         .then(res.send({complete: true}))
 })
 
 app.get('/getHw', async (req,res) => {
-    res.send(await filesService.getAllHwTheme())
+    res.send(await filesService.getAllHw())
 })
 
 app.post('/setHwComplete', async (req, res) =>{
@@ -61,6 +63,10 @@ app.post('/setHwComplete', async (req, res) =>{
         .catch(err => {
             throw err
         })
+})
+
+app.get('/getUsers:adminId', async (req, res) => {
+    res.send(await userService.getAllUsers(req.params.adminId))
 })
 
 module.exports = app;

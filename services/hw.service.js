@@ -5,15 +5,18 @@ const userModel = require('../models/userModel')
 class HwService {
 
     createHw = async (req, adminId) => {
-        console.log(req)
+        const lesson = JSON.parse(req.lesson)
+        console.log(lesson)
         await userModel.findOne({
             adminId: adminId
         }).then(async () => {
             await hwModel.create({
-                lessonName: req.lesson.name,
-                themeName: req.lesson.theme,
+                themeType: lesson.themeType,
+                cost: Number(lesson.cost),
+                lessonName: lesson.name,
+                themeName: lesson.theme,
                 createDate: Date.now(),
-                completeDate: req.lesson.completeDate,
+                completeDate: lesson.completeDate,
                 hwStatus: 'Pending'
             })
         });
@@ -25,7 +28,7 @@ class HwService {
         console.log(req)
 
         await hwModel.findOneAndUpdate(
-            {_id: theme._id},
+            { _id: theme._id },
             {
                 $push: {
                     users: [
@@ -64,9 +67,7 @@ class HwService {
                     await hwModel.findOne(
                         {
                             users: [
-                                {
-                                    userName: WhatUserComplete.username
-                                }
+                                { _id: WhatUserComplete._id }
                             ]
                         },
                         {
@@ -74,13 +75,19 @@ class HwService {
                             completeDate: Date.now()
                         }
                     )
-            });
+            })
+                .then(async () => {
+                    await userModel.findByIdAndUpdate(
+                        { _id: WhatUserComplete._id },
+                        { $inc: { coins: + lesson.theme.coins } }
+                        )
+                });
         });
 
 
     }
 
-    getAllHwTheme = async () => {
+    getAllHw = async () => {
         return {
             themes: await hwModel.find({
                 hwStatus: 'Pending',

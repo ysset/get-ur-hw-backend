@@ -6,7 +6,8 @@ const schema = mongoose.Schema({
         familyName: String,
         givenName: String
     },
-    adminId: Number,
+    coins: Number,
+    adminId: String,
     status: String,
     gender: String,
     username: String,
@@ -32,7 +33,7 @@ schema.statics.findOneOrCreate = function findOneOrCreate(profile) {
                         givenName: profile.name.givenName
                     },
                     gender: profile.gender,
-                    registrationDate: `${new Date().getDay()}:${new Date().getMonth()}:${new Date().getFullYear()},${new Date().getHours()}:${new Date().getMinutes()}`
+                    registrationDate: Date.now()
                 })
                     .then((result) => {
                         return resolve(result);

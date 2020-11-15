@@ -1,7 +1,7 @@
-const router = require('express').Router();
+const app = require('express').Router();
 const passport = require('passport');
 
-router.get("/login/success", (req, res) => {
+app.get("/login/success", (req, res) => {
     if (req.user) {
         res.json({
             success: true,
@@ -14,21 +14,21 @@ router.get("/login/success", (req, res) => {
     }
 });
 
-router.get("/login/failed", (req, res) => {
+app.get("/login/failed", (req, res) => {
     res.status(401).json({
         success: false,
         massage: "fail",
     });
 });
 
-router.get("/logout", (req, res) => {
+app.get("/logout", (req, res) => {
     req.logout();
     res.redirect("https://hw.hitmarker.pro")
 });
 
-router.get("/vkontakte", passport.authenticate("vkontakte"));
+app.get("/vkontakte", passport.authenticate("vkontakte"));
 
-router.get(
+app.get(
     "/vkontakte/redirect",
     passport.authenticate("vkontakte", {
         successRedirect: "https://hw.hitmarker.pro",
@@ -36,4 +36,4 @@ router.get(
     })
 );
 
-module.exports = router;
+module.exports = app;

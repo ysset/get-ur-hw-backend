@@ -37,7 +37,7 @@ mongoose
             cookieSession({
                 name: "session",
                 keys: [process.env.COOKIE_KEY],
-                maxAge: 24 * 60 * 60 * 100
+                maxAge: 365 * 24 * 60 * 60 * 100
             })
         );
         app.set('views', path.join(__dirname, 'views'));

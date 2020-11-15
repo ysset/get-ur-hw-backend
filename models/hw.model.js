@@ -1,9 +1,10 @@
 const mongoose = require('mongoose')
 
 const schema = mongoose.Schema({
+    cost: Number,
     lessonName: String,
     themeName: String,
-    type: String,
+    themeType: String,
     createDate: Date,
     completeDate: String,
     hwStatus: String,
